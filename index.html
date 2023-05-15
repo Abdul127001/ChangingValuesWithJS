@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing With HTML Value</title>
+    <style>
+        :root {
+           --base: #eb4646;
+           --spacing:10px;
+           --blur:5px;
+        }
+
+
+
+        body {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 20%;
+        }
+        h3{
+            color: var(--base);
+        }
+
+        .controls {
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+
+        img {
+            border-radius: 10px;
+            background-color: var(--base);
+            padding: var(--spacing);
+            filter: blur(var(--blur));
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Playing With <h3>JAVASCRIPT</h2></h1>
+    <div class="controls">
+        <lable for="spacing">Spacing: </lable>
+        <input type="range" name="spacing" min="10" max="100" data-sizing="px" />
+        <lable for="blur">Blur: </lable>
+        <input type="range" name="blur" min="5" max="25" data-sizing="px" />
+        <lable for="base">Base Color: </lable>
+        <input type="color" name="base" value="#ccc" />
+    </div>
+
+    <img src="https://picsum.photos/id/870/200/300" alt="Image" />
+    
+
+    <script>
+        const input = document.querySelectorAll(".controls input");
+
+        function handleUpdate(input) {
+            console.log(this.input)
+        }
+
+        input.forEach(input => addEventListener('change', handleUpdate));
+
+    </script>
+</body>
+</html>
