@@ -44,7 +44,7 @@
         <lable for="spacing">Spacing: </lable>
         <input type="range" name="spacing" min="10" max="100" data-sizing="px" />
         <lable for="blur">Blur: </lable>
-        <input type="range" name="blur" min="5" max="25" data-sizing="px" />
+        <input type="range" name="blur" min="0" max="25" data-sizing="px" />
         <lable for="base">Base Color: </lable>
         <input type="color" name="base" value="#ccc" />
     </div>
@@ -59,7 +59,8 @@
             // console.log(this.value)
             // console.log(this.dataset)
             const suffix = this.dataset.sizing || "";
-            // console.log(suffix)
+            // console.log(this.name)
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
         }
 
         input.forEach(input => input.addEventListener('change', handleUpdate));
